@@ -1,9 +1,10 @@
-# README
+### README
 
 データベース設計
 ============
 
-##messagesテーブル
+### messagesテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
@@ -15,7 +16,7 @@
 - belongs_to :user
 
 
-## userテーブル
+### userテーブル
 |Column|Type|Options|
 |name|string|null: false, add_index: true|
 |email|string|null: false, unique: true|
@@ -25,7 +26,7 @@
 - has_many :messages
 
 
-##groupsテーブル
+###groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
@@ -35,7 +36,7 @@
 - has_many :messages
 
 
-##groups_usersテーブル
+###groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
