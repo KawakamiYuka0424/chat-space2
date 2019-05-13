@@ -1,0 +1,16 @@
+//左メニューヘッダー
+.left-content__header
+  .left-content__content-box
+    %h3.left-content__username
+      = current_user.name
+    %ul.left-content__header-list
+      %li.left-content__header-list__list
+        = link_to new_group_path do
+          %i.fa.fa-edit.font-color
+      %li.left-content__header-list__list
+        = link_to edit_user_path(current_user) do
+          %i.fa.fa-cog.font-color
+.left-content__group-index
+  .left-content__content-box
+    .left-content__group-index__box
+      = render partial: "shared/group", collection: current_user.groups
