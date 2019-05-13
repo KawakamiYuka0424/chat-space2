@@ -1,0 +1,15 @@
+$header-height: 97px;
+$input-element-height: 50px;
+$right-content-padding-left: 40px;
+$right-content-padding-right: 40px;
+
+$left-content-padding-left: 20px;
+$left-content-padding-right: 20px;
+
+
+
+@mixin clearfix {
+  content: "";
+  clear: both;
+  display: none;
+}
