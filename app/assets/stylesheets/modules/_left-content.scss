@@ -1,0 +1,60 @@
+.left-content{
+  background-color: #2f3e51;
+  color: white;
+  width: 300px;
+  height: 100vh;
+  float: left;
+
+  &__header {
+  background-color: #253141;
+  height: $header-height;
+  width: 300px;
+  }
+
+    &__content-box {
+    padding-left: $left-content-padding-left;
+    padding-right: $left-content-padding-right;
+
+      h3 {
+        font-weight: bold;
+        font-size :16px;
+          float : left;
+        line-height: $header-height;
+      }
+
+      ul {
+        float: right;
+        line-height: $header-height;
+        .font-color {
+        color: white;
+      }
+
+        li {
+          float :left;
+          color: white;
+          padding-right: 5px;
+        }
+      }
+    }
+
+
+  &__group-index {
+
+    &__box{
+      padding: 20px 0px;
+      color: white;
+      text-decoration: none;
+      border-bottom:0px;
+
+        .group-name{
+          font-size: 15px;
+          padding-bottom: 5px;
+        }
+
+        .chat-heading{
+          font-size: 11px;
+        }
+
+    }
+  }
+}
