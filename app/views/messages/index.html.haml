@@ -1,0 +1,32 @@
+.left-content
+  = render partial: "shared/sidebar"
+//右のチャット画面
+.right-content
+  .right-content_container
+    //チャット画面ヘッダー
+    .right-content__header.clearfix
+      .right-content__header__container
+        .right-content__header__left-item
+          .right-content__header__left-item__group
+            = @group.name
+          %h4.each-member Member :
+          .right-content__header__left-item__members
+            -@group.users.each do |user|
+              .each-member
+                = user.name
+        .right-content__header__right-item
+          = link_to "Edit", edit_group_path(@group.id), class: "edit-btn btn"
+    //チャット画面内容
+    .right-content__messages.clearfix
+      .right-content__messages__container
+        = render partial: "shared/message", collection: @messages
+    //送信ボックス
+    .right-content__input
+      .message-box
+        = form_for [@group, @message], html: {class: 'form'} do |f|
+          = f.text_field :content, class: "text-box btn", placeholder: "type a message"
+          .form__mask
+            = f.label :image, class: "form__mask__image" do
+              %i.fa.fa-image
+              =f.file_field :image, style: "display:none;"
+            = f.submit "Send", class: "submit"
