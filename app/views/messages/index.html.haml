@@ -11,14 +11,18 @@
             = "グループネーム"
           %h4.each-member Member :
           .right-content__header__left-item__members
+          .each-member
+          ="ドラえもん"
         .right-content__header__right-item
           = link_to "Edit", class: "edit-btn btn"
     //チャット画面内容
     .right-content__messages.clearfix
       .right-content__messages__container
-        = render partial: "shared/message", collection: @messages
+        = render partial: "shared/message"
     //送信ボックス
     .right-content__input
       .message-box
       .form__mask
-      %i.fa.fa-image
+        %i.fa.fa-image
+
+

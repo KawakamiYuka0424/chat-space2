@@ -1,10 +1,9 @@
-.right-content__messages__box{"data-message-id": message.id}
+.right-content__messages__box
   .right-content__messages__box__username
     %h4
-      = ""
+      = "名前"
   .right-content__messages__box__time
     %h4
-      = message.created_at
+      = "ここに時間がはいる"
     .right-content__messages__box__content
-      = message.content
-      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+      = "メッセージ内容"
