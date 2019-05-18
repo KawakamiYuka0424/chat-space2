@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'groups#index'
-  post "/" => "groups#index"
-  resources :messages, only: [:index, :create]
+  root 'messages#index'
+  post "/" => "messages#index"
+  resources :groups, only:[:index]
+  
 end

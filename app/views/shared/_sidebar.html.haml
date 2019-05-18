@@ -3,14 +3,17 @@
   .left-content__content-box
     %h3.left-content__username
       = "カレントユーザー"
+      %i.fa.fa-edit.font-color
+      %i.fa.fa-cog.font-color
     %ul.left-content__header-list
       %li.left-content__header-list__list
-      %i.fa.fa-edit.font-color
+        = "サンプル" 
       %li.left-content__header-list__list
-      %i.fa.fa-cog.font-color
+        = "グッドバイワールド" 
 .left-content__group-index
   .left-content__content-box
     .left-content__group-index__box
       = render partial: "shared/group"
 
 
+      
