@@ -8,21 +8,24 @@
       .right-content__header__container
         .right-content__header__left-item
           .right-content__header__left-item__group
-            = "グループネーム"
+            = "グループメンバー"
           %h4.each-member Member :
           .right-content__header__left-item__members
-          .each-member
-          ="ドラえもん"
+            .each-member
+              = "ユーザーメンバー"
         .right-content__header__right-item
           = link_to "Edit", class: "edit-btn btn"
     //チャット画面内容
     .right-content__messages.clearfix
       .right-content__messages__container
-        = render partial: "shared/message"
+        = render partial: "shared/message", collection: @messages
     //送信ボックス
     .right-content__input
       .message-box
-      .form__mask
-        %i.fa.fa-image
-
-
+        = form_for (:session), html: {class: 'form'} do |f|
+          = f.text_field :content, class: "text-box btn", placeholder: "type a message"
+          .form__mask
+            = f.label :image, class: "form__mask__image" do
+              %i.fa.fa-image
+              =f.file_field :image, style: "display:none;"
+            = f.submit "Send", class: "submit"
