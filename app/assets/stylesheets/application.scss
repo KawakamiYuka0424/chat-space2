@@ -1,6 +1,6 @@
-@import "./config/variable";
+@import "./config/colors";
+@import "./config/font-size";
 @import "./override/reset";
-@import "./modules/left-content";
+@import "./modules/sidebar";
 @import "./modules/right-content";
-@import "./group";
 @import "./font-awesome";
