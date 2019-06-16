@@ -11,5 +11,13 @@ $(document).on('turbolinks:load', function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.messages').append(html);
+      $('#message_content').val(''); //input内のメッセージを消しています。
+    })
+    .fail(function(data){
+      alert('エラーが発生したためメッセージは送信できませんでした。');
+    })
   })
 });
