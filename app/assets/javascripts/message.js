@@ -18,10 +18,19 @@ $(document).on('turbolinks:load', function(){
                </div>`
   return html; 
     }
+
+    function scrollBottom(){
+      var target = $('.message').last();
+      var position = target.offset().top + $('.message').scrollTop();
+      $('.message').animate({
+        scrollTop: 0
+      }, 300, 'swing');
+    }
+    
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
-    var url = (window.location.href); // $(this).attr('action')でも可能です
+    var url = $(this).attr('action'); 
     $.ajax({  
       url: url,
       type: 'POST',
@@ -32,9 +41,14 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
+      $('.message').append(html);
       $('#message_content').val(''); //input内のメッセージを消しています。
+
+      
+      scrollBottom()
+
     })
+
     .fail(function(data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
     })
