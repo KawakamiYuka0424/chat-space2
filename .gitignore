@@ -11,12 +11,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-
+!/log/.keep
+!/tmp/.keep
 
 
 # Ignore Byebug command history file
-public/uploads/message
-public/uploads/tmp
+public/uploads/message/
+public/uploads/tmp/
 
 
 
