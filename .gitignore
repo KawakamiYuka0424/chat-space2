@@ -15,6 +15,9 @@
 !/tmp/.keep
 
 # Ignore Byebug command history file
-uploads
+public/uploads/message
+public/uploads/tmp
+
+
 
 
